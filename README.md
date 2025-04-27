@@ -1,57 +1,130 @@
+Here's a **very well-structured** `README.md` you can directly upload to GitHub:
+
+---
+
 # AI Agentic Research System 🤖
 
-A dual-agent system for deep web research and answer generation using:
-- **Tavily** for web crawling
-- **Hugging Face** models for local processing
-- **LangGraph** for workflow management
-- **Streamlit** for interactive UI
+A dual-agent AI system for **automated deep web research** and **answer generation** using:
+- 🕸️ **Tavily** for web crawling
+- 🤖 **Hugging Face** models for local NLP
+- 🔄 **LangGraph** for state management and workflow orchestration
+- 🖥️ **Streamlit** for an interactive web interface
 
-## Features ✨
-- 🕸️ Web research with Tavily API
-- 🤖 Dual-agent architecture (Researcher + Drafter)
-- 📊 State management with LangGraph
-- 🖥️ Streamlit web interface
-- 🔄 Error recovery & quality checks
+---
 
-## Prerequisites 📋
+## ✨ Features
+- 🔍 Web research agent powered by **Tavily API**
+- 📝 Drafting agent for high-quality answer generation
+- 📈 LangGraph-powered agent collaboration and error recovery
+- 🖥️ User-friendly web interface using **Streamlit**
+- 🛡️ Built-in quality control and fault-tolerant system design
+
+---
+
+## 📋 Prerequisites
 - Python 3.8+
 - [Tavily API Key](https://tavily.com/)
-- 4GB+ RAM (8GB recommended)
-- GPU (optional but recommended)
+- 4GB+ RAM (8GB recommended for best performance)
+- GPU (Optional but recommended for faster model inference)
 
-## Installation 🛠️
+---
 
-1. **Clone Repository**
-git clone https://github.com/Sauham/AI-Research-agent-using-LangGraph cd ai-research-system Install Dependencies
+## 🛠️ Installation
 
-bash pip install -r requirements.txt Configure Environment
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Sauham/AI-Research-agent-using-LangGraph
+cd ai-research-system
+```
 
-bash
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-Copy and edit .env file
+### 3. Configure Environment Variables
+```bash
 cp .env.example .env
+# Open the .env file and add your Tavily API key:
+# TAVILY_API_KEY=your_key_here
+```
 
-Add your Tavily API key
-nano .env # TAVILY_API_KEY=your_key_here Download Models (First Run Only)
+### 4. Download Hugging Face Models (First Run Only)
+```bash
+python -c "from transformers import AutoModel; AutoModel.from_pretrained('google/flan-t5-base')"
+```
 
-bash python -c "from transformers import AutoModel; AutoModel.from_pretrained('google/flan-t5-base')" Usage 🚀 Command Line Interface bash
+---
 
-Run research workflow
+## 🚀 Usage
+
+### Command-Line Interface
+```bash
+# Run research workflow
 python run.py --query "Explain quantum computing basics"
 
-Test system components
-python test_tavily.py Web Interface (Streamlit) bash streamlit run app.py Access at: http://localhost:8501
+# Test individual system components
+python test_tavily.py
+```
 
-Streamlit Interface Demo
+### Web Interface (Streamlit)
+```bash
+streamlit run app.py
+```
+🔗 Access at: [http://localhost:8501](http://localhost:8501)
 
-Project Structure 📂 /research-system ├── agents/ │ ├── research_agent.py # Web crawler & data processor │ └── draft_agent.py # Answer generator ├── work.py # LangGraph workflow ├── app.py # Streamlit UI ├── utils/ │ └── config.py # Environment management ├── requirements.txt └── .env.example Troubleshooting 🚨 Issue Solution Missing API Key Verify .env file exists in root directory Dependency Errors Run pip install -r requirements.txt --force-reinstall Slow Performance Use google/flan-t5-small model instead Model Download Failures Set HF_HUB_ENABLE_HF_TRANSFER=1 Contributing 🤝 Fork the repository
+---
 
-Create your feature branch (git checkout -b feature/amazing-feature)
+## 📂 Project Structure
 
-Commit changes (git commit -m 'Add amazing feature')
+```
+/research-system
+├── agents/
+│   ├── research_agent.py     # Web crawler and preprocessor
+│   └── draft_agent.py         # Answer generator based on processed content
+├── work.py                    # LangGraph workflow controller
+├── app.py                     # Streamlit-based web UI
+├── utils/
+│   └── config.py              # API keys and environment variable management
+├── requirements.txt
+└── .env.example
+```
 
-Push to branch (git push origin feature/amazing-feature)
+---
 
-Open Pull Request
+## 🚨 Troubleshooting
 
-License 📄 MIT License - See LICENSE for details
+| Issue                         | Solution                                              |
+|:------------------------------|:------------------------------------------------------|
+| Missing API Key               | Ensure your `.env` file is correctly set up.          |
+| Dependency Errors             | Run `pip install -r requirements.txt --force-reinstall` |
+| Slow Model Performance        | Switch to `google/flan-t5-small` for lighter inference |
+| Model Download Failures       | Set environment variable `HF_HUB_ENABLE_HF_TRANSFER=1` |
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions!
+
+1. Fork the repository
+2. Create your feature branch:
+    ```bash
+    git checkout -b feature/amazing-feature
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m 'Add amazing feature'
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin feature/amazing-feature
+    ```
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
